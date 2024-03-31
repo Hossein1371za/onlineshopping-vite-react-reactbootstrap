@@ -8,15 +8,21 @@ import "swiper/css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
-import "./assets/css/animate.css"
-import "./assets/css/style.min.css"
+import "./assets/css/animate.css";
+import "./assets/css/style.min.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./home/Home.jsx";
+import Blog from "./blog/Blog.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/blog", element: <Blog /> },
+    ],
   },
 ]);
 

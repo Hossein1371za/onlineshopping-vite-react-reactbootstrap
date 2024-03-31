@@ -1,2 +1,12 @@
-
+@font-face {
+    font-family: "vazir-digits";
+    src: url("./assets/css/vazirmatn-v33.003/misc/Farsi-Digits/fonts/ttf/Vazirmatn-FD-Medium.ttf");
+  }
+  *{
+    direction: rtl;
+  }
+  
+  .number{
+    font-family: vazir-digits;
+  }
 

@@ -1,12 +1,14 @@
-import './App.css'
+import { Outlet } from "react-router-dom";
+import "./App.css";
+import NavItems from "./components/NavItems";
 
 function App() {
   return (
     <>
-     <h1>سلام دنیا</h1>
-     <p className='number'>123</p>
+      <NavItems />
+      <Outlet />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
