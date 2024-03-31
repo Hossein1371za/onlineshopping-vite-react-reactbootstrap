@@ -3,7 +3,8 @@ import './App.css'
 function App() {
   return (
     <>
-     <h1> hi hossein</h1>
+     <h1>سلام دنیا</h1>
+     <p className='number'>123</p>
     </>
   )
 }
