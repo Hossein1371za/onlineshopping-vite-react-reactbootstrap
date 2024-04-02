@@ -2175,8 +2175,8 @@ button {
 }
 
 .section-header .subtitle {
-    font-size: 1.125rem;
-    letter-spacing: 5px;
+    font-size: 2.125rem;
+
     text-transform: uppercase;
     color: #f16126;
     font-weight: 500;
@@ -3760,7 +3760,6 @@ button {
 }
 
 .header-section.style-3 .header-top .header-top-area .header-top-contact a {
-    letter-spacing: 1.5px;
     padding: 0 10px;
     border-right: 1px solid rgba(255, 255, 255, .6)
 }
@@ -4792,7 +4791,6 @@ button {
 
 .banner-section .section-wrapper .banner-content .subtitle {
     color: #f16126;
-    letter-spacing: 5px;
     font-size: 18px
 }
 
