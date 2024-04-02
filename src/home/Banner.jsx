@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import productData from "../products.json";
 import { FaBell, FaGlobe, FaUser } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const title = (
   <h2>
@@ -25,17 +26,36 @@ const bannerList =[
 ]
 
 const Banner = () => {
-  const [serchInput,setSearchInput] = useState("")
+  const [searchInput,setSearchInput] = useState("")
   const [filteredProducts,setFilteredProducts] = useState("")
 
+  const handleSearch = (e)=>{
+    const searchTerm = e.target.value;
+    setSearchInput(searchTerm)
+
+    const filtered = productData.filter((product)=>product.name.includes(searchTerm))
+    setFilteredProducts(filtered)
+  }
 
   return <div className="banner-section style-4">
     <div className="container">
       <div className="banner-content">
         {title}
         <form>
-          <input type="text" name="search" id="search" placeholder="جستو جو در محصولات ..."/>
+          <input type="text" name="search" id="search" placeholder="جستو جو در محصولات ..." value={searchInput} onChange={handleSearch}/>
         </form>
+        <p>{desc}</p>
+        <ul className="lab-ul">
+          {
+            searchInput && filteredProducts.map((product, index)=>{
+              return(
+                <li key={index}>
+                  <Link to={`/shop/${product.id}`}>{product.name}</Link>
+                </li>
+              )
+            })
+          }
+        </ul>
       </div>
     </div>
   </div>;
