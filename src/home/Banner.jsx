@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import productData from "../products.json";
 import { FaBell, FaGlobe, FaUser } from "react-icons/fa6";
+import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import SelectedCategoty from "../components/SelectedCategoty";
 
 const title = (
   <h2>
@@ -42,7 +44,9 @@ const Banner = () => {
       <div className="banner-content">
         {title}
         <form>
+          <SelectedCategoty select={"all"}/>
           <input type="text" name="search" id="search" placeholder="جستو جو در محصولات ..." value={searchInput} onChange={handleSearch}/>
+          <button type="submit"><FaSearch/></button>
         </form>
         <p>{desc}</p>
         <ul className="lab-ul">

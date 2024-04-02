@@ -5013,7 +5013,7 @@ button {
 
 .banner-section.style-4 .banner-content form button {
     background: transparent;
-    right: 30px;
+    left: 30px;
     top: 21px;
     font-weight: 700
 }
