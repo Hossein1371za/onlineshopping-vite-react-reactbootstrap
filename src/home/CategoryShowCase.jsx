@@ -82,8 +82,11 @@ const ProductData = [
 const CategoryShowCase = () => {
   const [items, setItems] = useState(ProductData);
 
-  const filterItem = () => {
-    console.log("hi");
+  const filterItem = (cateItem) => {
+    const updateItem = ProductData.filter((element)=>{
+        return element.cate === cateItem
+    })
+    setItems(updateItem)
   };
 
   return (
@@ -99,7 +102,7 @@ const CategoryShowCase = () => {
           <h2 className="title">{title}</h2>
           <div className="course-filter-group">
             <ul className="lab-ul">
-              <li onClick={() => filterItem("همه")}>همه</li>
+              <li onClick={() => setItems(ProductData)}>همه</li>
               <li onClick={() => filterItem("کفش")}>کفش</li>
               <li onClick={() => filterItem("کیف")}>کیف</li>
               <li onClick={() => filterItem("کتونی")}>کتونی</li>
@@ -109,39 +112,46 @@ const CategoryShowCase = () => {
           </div>
         </div>
         <div className="section-wrapper">
-          {items.map((item) => {
-            return (
-              <div className="col" key={item.id}>
-                <div className="course-item style-4">
-                  <div className="course-thubm">
-                    <img src={item.imgUrl} alt="" />
-                    <div className="course-category">
-                      <div className="course-cate">
-                        <a href="#">{item.cate}</a>
+          <div className="row g-4 justify-content-center row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 course-filter">
+            {items.map((item) => {
+              return (
+                <div className="col" key={item.id}>
+                  <div className="course-item style-4">
+                    <div className="course-inner">
+                      <div className="course-thumb">
+                        <img src={item.imgUrl} alt="" />
+                        <div className="course-category">
+                          <div className="course-cate">
+                            <a href="#">{item.cate}</a>
+                          </div>
+                          <div className="course-reiew">
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                          </div>
+                        </div>
                       </div>
-                      <div className="course-reiew">
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="course-content">
-                    <Link to={`/shop${item.id}`}>{item.title}</Link>
-                    <div className="course-footer">
-                      <div>
-                        <Link to="/" className="ca-name">
-                          {item.brand}
+                      <div className="course-content">
+                        <Link to={`/shop${item.id}`}>
+                          <h6>{item.title}</h6>
                         </Link>
+                        <div className="course-footer">
+                          <div className="course-author">
+                            <Link to="/" className="ca-name">
+                              {item.brand}
+                            </Link>
+                          </div>
+                          <div className="course-price">{item.price}</div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
