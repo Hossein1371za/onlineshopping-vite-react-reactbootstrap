@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const title = "Our Products";
+const title = "محصولات ما";
 
 const ProductData = [ 
 {
@@ -68,7 +68,7 @@ id: 7,
 },
 {
 imgUrl: 'src/assets/images/categoryTab/08.jpg',
-cate: ';ta',
+cate: 'کتونی',
 title: 'Sneakers',
 author: 'assets/images/course/author/02.jpg',
 brand: 'Bata',
@@ -80,6 +80,10 @@ id: 8,
 const CategoryShowCase = () => {
     const [items,setItems] = useState(ProductData)
 
+    const filterItem = ()=>{
+        console.log("hi")
+    }
+
   return (
     <div className='course-section style-3 padding-tb'>
         <div className='course-shape one'>
@@ -87,6 +91,21 @@ const CategoryShowCase = () => {
         </div>
         <div className='course-shape two'>
             <img src='/src/assets/images/shape-img/icon/02.png' alt=''/>
+        </div>
+        <div className='container'>
+            <div className='section-header'>
+                <h2 className='title'>{title}</h2>
+                <div className='course-filter-group'>
+                    <ul className='lab-ul'>
+                        <li onClick={()=>filterItem("همه")}>همه</li>
+                        <li onClick={()=>filterItem("کفش")}>کفش</li>
+                        <li onClick={()=>filterItem("کیف")}>کیف</li>
+                        <li onClick={()=>filterItem("کتونی")}>کتونی</li>
+                        <li onClick={()=>filterItem("زیبایی")}>زیبایی</li>
+                        <li onClick={()=>filterItem("تلفن همراه")}>تلفن همراه</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
   )
