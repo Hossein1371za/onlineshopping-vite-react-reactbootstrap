@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const title = "Our Products";
 
-const ProductData = [
+const ProductData = [ 
 {
 imgUrl: 'src/assets/images/categoryTab/01.jpg',
 cate: 'کفش',
@@ -78,8 +78,17 @@ id: 8,
 ]
 
 const CategoryShowCase = () => {
+    const [items,setItems] = useState(ProductData)
+
   return (
-    <div>CategoryShowCase</div>
+    <div className='course-section style-3 padding-tb'>
+        <div className='course-shape one'>
+            <img src='/src/assets/images/shape-img/icon/01.png' alt=''/>
+        </div>
+        <div className='course-shape two'>
+            <img src='/src/assets/images/shape-img/icon/02.png' alt=''/>
+        </div>
+    </div>
   )
 }
 
