@@ -20,7 +20,7 @@ const NavItems = () => {
   return (
     <header
       className={`header-section style-4 ${
-        headerFixed ? "deader-fixed fadeInUp" : ""
+        headerFixed ? "header-fixed fadeInUp" : ""
       }`}
     >
       <div className={`header-top d-md-none ${socialToggle ? "open" : ""}`}>
