@@ -1,6 +1,7 @@
 import React from "react";
 import CountUp from "react-countup";
 import { FaUserFriends, FaUserGraduate, FaBell } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const countList = [
   {
@@ -22,33 +23,45 @@ const countList = [
 
 const AboutUs = () => {
   return (
-    <div className="instructor-section style-2 padding-tb section-bg-ash">
+    <div className="instructor-section style-2 padding-tb">
       <div className="container flex-row-reverse">
-        <div className="section-wrapper">
-          <div className="row">
-            
+        <div className="section-wrapper bg-transparent ">
+          <div className="row gap-4">
+          <div className="col">
+              <div className="instructor-content">
+                <span className="subtitle">چرا مارو انتخاب میکنید</span>
+                <h2 className="title">سریع دقیق و بصرفه</h2>
+                <p className="subtitle">با نصب اپلیکیشن ما روی دستگاه خود از خرید لذت ببرید و در زمان صرفه جویی کنید فقط کافیست نصب کنید و شروع به خریدن کنید.</p>
+                <Link to="/sing-up" className="lab-btn">به ما بپیوندید</Link>
+              </div>
+            </div>
             <div className="col">
               {countList.map((item, index) => {
                 return (
                   <div key={index} className="count-item">
-                    <div className="count-inner align-items-center">
-                    <div className="count-content">
+                    <div className="count-inner">
+                      <div className="count-content">
                         <h2>
                           <span className="count number">
                             <CountUp end={item.count} />
                           </span>
                           <span>+</span>
                         </h2>
+                        <p>{item.text}</p>
                       </div>
                       <div className="count-icon">
                         <i>{item.iconName}</i>
                       </div>
-                      
                     </div>
                   </div>
                 );
               })}
-            </div>     
+            </div>
+            <div className="col">
+              <div className="instructor-thumb">
+                <img src="src/assets/images/instructor/01.png" alt="" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
