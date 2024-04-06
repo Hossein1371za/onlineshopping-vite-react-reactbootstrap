@@ -5,6 +5,7 @@ import CategoryShowCase from "./CategoryShowCase";
 import Register from "./Register";
 import Location from "./Location";
 import AboutUs from "./AboutUs";
+import Application from "./Application";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Register />
       <Location />
       <AboutUs />
+      <Application/>
     </div>
   );
 };
