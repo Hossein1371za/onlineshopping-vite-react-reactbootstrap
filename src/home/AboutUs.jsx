@@ -23,10 +23,10 @@ const countList = [
 
 const AboutUs = () => {
   return (
-    <div className="instructor-section style-2 padding-tb">
+    <div className="instructor-section style-2 padding-tb section-bg-ash">
       <div className="container flex-row-reverse">
         <div className="section-wrapper bg-transparent ">
-          <div className="row gap-4">
+          <div className="row g-4 justify-content-center align-items-center row-cols-1 row-cols-md-2 row-cols-xl-3">
           <div className="col">
               <div className="instructor-content">
                 <span className="subtitle">چرا مارو انتخاب میکنید</span>
@@ -40,6 +40,10 @@ const AboutUs = () => {
                 return (
                   <div key={index} className="count-item">
                     <div className="count-inner">
+                      
+                      <div className="count-icon">
+                        <i>{item.iconName}</i>
+                      </div>
                       <div className="count-content">
                         <h2>
                           <span className="count number">
@@ -48,9 +52,6 @@ const AboutUs = () => {
                           <span>+</span>
                         </h2>
                         <p>{item.text}</p>
-                      </div>
-                      <div className="count-icon">
-                        <i>{item.iconName}</i>
                       </div>
                     </div>
                   </div>
