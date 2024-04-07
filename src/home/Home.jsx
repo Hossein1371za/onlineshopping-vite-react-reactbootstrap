@@ -6,6 +6,7 @@ import Register from "./Register";
 import Location from "./Location";
 import AboutUs from "./AboutUs";
 import Application from "./Application";
+import Sponsor from "./Sponsor";
 
 const Home = () => {
   return (
@@ -16,7 +17,8 @@ const Home = () => {
       <Register />
       <Location />
       <AboutUs />
-      <Application/>
+      <Application />
+      <Sponsor />
     </div>
   );
 };
