@@ -9,7 +9,7 @@ const quickTitle = "لینک های سریع";
 const tweetTitle = "توییت های اخیر";
 
 const addressList = [
-  { iconName: <LuMapPin/> , text: "New York, USA." },
+  { iconName: <LuMapPin/> , text: "تهران میر داماد ..." },
   { iconName: <LuPhone />, text: "+880 123 456 789" },
   { iconName: < LuMail/>, text: "info@shopcart.com" },
 ];
@@ -71,6 +71,77 @@ const Footer = () => {
                   </div>
                   <div className="content">
                     <p>{desc}</p>
+                    <ul className="lab-ul office-address">
+                      {
+                        addressList.map((item,index)=>{
+                          return(
+                            <li key={index} className="h5">
+                              {item.iconName}
+                              <span className="mx-2">{item.text}</span>
+                            </li>
+                          )
+                        })
+                      }
+                    </ul>
+                    <ul className="lab-ul social-icons">
+                      {
+                        socialList.map((item,index)=>{
+                          return(
+                            <li key={index} className="h5">
+                              <a href="#" className={item.className}>{item.iconName}</a>
+                            </li>
+                          )
+                        })
+                      }
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="footer-item our-address">
+              <div className="footer-inner">
+                <div className="footer-content">
+                  <div className="content">
+                    <h4>{quickTitle}</h4>
+                  </div>
+                  <div className="content">
+                    <ul className="lab-ul office-address">
+                      {
+                        quickList.map((item,index)=>{
+                          return(
+                            <li key={index} className="h5">
+                              <a href="#">{item.text}</a>
+                            </li>
+                          )
+                        })
+                      }
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="footer-item our-address">
+              <div className="footer-inner">
+                <div className="footer-content">
+                  <div className="content">
+                    <h4>{ItemTitle}</h4>
+                  </div>
+                  <div className="content">
+                    <ul className="lab-ul office-address">
+                      {
+                        ItemList.map((item,index)=>{
+                          return(
+                            <li key={index} className="h5">
+                              <a href="#">{item.text}</a>
+                            </li>
+                          )
+                        })
+                      }
+                    </ul>
                   </div>
                 </div>
               </div>
