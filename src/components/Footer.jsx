@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPinterestP } from "react-icons/fa";
-import { LuMapPin,LuPhone, LuMail,LuTwitter,LuLinkedin,LuInstagram} from "react-icons/lu";
+import { LuMapPin,LuPhone,LuFacebook, LuMail,LuTwitter,LuLinkedin,LuInstagram} from "react-icons/lu";
 const title = "درباره فروشگاه";
 const desc =
   "با نصب اپلیکیشن ما روی دستگاه خود از خرید لذت ببرید و در زمان صرفه جویی کنید فقط کافیست نصب کنید و شروع به خریدن کنید.";
@@ -58,7 +58,28 @@ const footerbottomList = [
 ];
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return <footer className="style-2">
+    <div className="footer-top dark-view padding-tb">
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="footer-item our-address">
+              <div className="footer-inner">
+                <div className="footer-content">
+                  <div className="content">
+                    <h4>{title}</h4>
+                  </div>
+                  <div className="content">
+                    <p>{desc}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>;
 };
 
 export default Footer;
