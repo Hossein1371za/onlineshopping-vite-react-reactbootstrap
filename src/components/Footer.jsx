@@ -181,7 +181,7 @@ const Footer = () => {
         <div className="container">
           <div className="section-wrapper">
             <p className="number">
-              &copy; 1403<Link to="/">آنلاین شاپ</Link>طراحی توسط{" "}
+              &copy; 1403<Link to="/">آنلاین شاپ</Link>طراحی توسط
               <a href="#" target="_blank">
                 H Z
               </a>
