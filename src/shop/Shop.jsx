@@ -4,7 +4,7 @@ import PageHeader from '../components/PageHeader'
 const Shop = () => {
   return (
     <div>
-        <PageHeader />
+        <PageHeader title="صفحه فروشگاهی ما" curPage="فروشگاه"/>
     </div>
   )
 }
