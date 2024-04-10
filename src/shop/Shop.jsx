@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 
+import Data from "../products.json"
+
 import { LuList, LuLayoutGrid } from "react-icons/lu";
 import PageHeader from "../components/PageHeader";
+import ProductsCards from "./ProductsCards";
 
 const showResults = "نمایش 1 - 12 از 139 محصول";
 
 const Shop = () => {
   const [gridList, setGridList] = useState(true);
+  const [products ,setProducts ] = useState(Data)
   return (
     <div>
       <PageHeader title="صفحه فروشگاهی ما" curPage="فروشگاه" />
@@ -32,6 +36,9 @@ const Shop = () => {
                       <LuList size={25} />
                     </a>
                   </div>
+                </div>
+                <div>
+                    <ProductsCards  products={products} gridList={gridList}/>
                 </div>
               </article>
             </div>
