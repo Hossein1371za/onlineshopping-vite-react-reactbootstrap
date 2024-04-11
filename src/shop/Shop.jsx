@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Data from "../products.json"
+import Data from "../products.json";
 
 import { LuList, LuLayoutGrid } from "react-icons/lu";
 import PageHeader from "../components/PageHeader";
@@ -11,7 +11,17 @@ const showResults = "نمایش 1 - 12 از 139 محصول";
 
 const Shop = () => {
   const [gridList, setGridList] = useState(true);
-  const [products ,setProducts ] = useState(Data)
+  const [products, setProducts] = useState(Data);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const productPerPage = 12;
+  const lastProduct = currentPage * productPerPage;
+  const firstProduct = lastProduct - productPerPage;
+  const currentProduct = products.slice(firstProduct, lastProduct);
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div>
       <PageHeader title="صفحه فروشگاهی ما" curPage="فروشگاه" />
@@ -39,9 +49,14 @@ const Shop = () => {
                   </div>
                 </div>
                 <div>
-                    <ProductsCards  products={products} gridList={gridList}/>
+                  <ProductsCards products={products} gridList={gridList} />
                 </div>
-                <Pagination/>
+                <Pagination 
+                productPerPage ={productPerPage}
+                totalProducts = {products.length}
+                paginate={paginate}
+                activePage= {currentPage}
+                />
               </article>
             </div>
             <div className="col-lg-4 col-12">left side</div>

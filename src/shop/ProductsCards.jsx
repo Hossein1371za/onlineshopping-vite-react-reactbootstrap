@@ -12,7 +12,7 @@ const ProductsCards = ({ gridList, products }) => {
     >
       {products.map((product) => {
         return (
-          <div className="col-lg-4 col-md-6 col-12" key={products.id}>
+          <div className="col-lg-4 col-md-6 col-12" key={product.id}>
             <div className={`${gridList ? "product-item" : "product-list-item"}`}>
               <div className="product-thumb">
                 <div className="pro-thumb">
