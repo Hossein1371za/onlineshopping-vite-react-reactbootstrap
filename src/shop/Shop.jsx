@@ -49,7 +49,7 @@ const Shop = () => {
                   </div>
                 </div>
                 <div>
-                  <ProductsCards products={products} gridList={gridList} />
+                  <ProductsCards products={currentProduct} gridList={gridList} />
                 </div>
                 <Pagination 
                 productPerPage ={productPerPage}
