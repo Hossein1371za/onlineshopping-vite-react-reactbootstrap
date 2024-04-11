@@ -6,6 +6,7 @@ import { LuList, LuLayoutGrid } from "react-icons/lu";
 import PageHeader from "../components/PageHeader";
 import ProductsCards from "./ProductsCards";
 import Pagination from "./Pagination";
+import Search from "./Search";
 
 const showResults = "نمایش 1 - 12 از 139 محصول";
 
@@ -59,7 +60,11 @@ const Shop = () => {
                 />
               </article>
             </div>
-            <div className="col-lg-4 col-12">left side</div>
+            <div className="col-lg-4 col-12">
+              <aside>
+                <Search/>
+              </aside>
+            </div>
           </div>
         </div>
       </div>
