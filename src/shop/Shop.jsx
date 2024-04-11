@@ -5,6 +5,7 @@ import Data from "../products.json"
 import { LuList, LuLayoutGrid } from "react-icons/lu";
 import PageHeader from "../components/PageHeader";
 import ProductsCards from "./ProductsCards";
+import Pagination from "./Pagination";
 
 const showResults = "نمایش 1 - 12 از 139 محصول";
 
@@ -40,6 +41,7 @@ const Shop = () => {
                 <div>
                     <ProductsCards  products={products} gridList={gridList}/>
                 </div>
+                <Pagination/>
               </article>
             </div>
             <div className="col-lg-4 col-12">left side</div>
