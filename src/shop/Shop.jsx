@@ -62,7 +62,7 @@ const Shop = () => {
             </div>
             <div className="col-lg-4 col-12">
               <aside>
-                <Search/>
+                <Search products={products} gridList={gridList}/>
               </aside>
             </div>
           </div>
