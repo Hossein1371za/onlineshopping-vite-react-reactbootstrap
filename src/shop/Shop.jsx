@@ -81,9 +81,9 @@ const Shop = () => {
                 <ShopCategory
                   filterItem={filterItem}
                   setItem={setProducts}
-                  setProducts={setProducts}
                   menuItems={menuItems}
-                  setSelectCategory={setSelectCategory}
+                  setProducts={setProducts}
+                  selectCategory={selectCategory}
                 />
               </aside>
             </div>
