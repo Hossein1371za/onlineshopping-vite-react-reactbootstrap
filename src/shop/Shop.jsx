@@ -7,6 +7,7 @@ import PageHeader from "../components/PageHeader";
 import ProductsCards from "./ProductsCards";
 import Pagination from "./Pagination";
 import Search from "./Search";
+import ShopCategory from "./ShopCategory";
 
 const showResults = "نمایش 1 - 12 از 139 محصول";
 
@@ -63,6 +64,7 @@ const Shop = () => {
             <div className="col-lg-4 col-12">
               <aside>
                 <Search products={products} gridList={gridList}/>
+                <ShopCategory/>
               </aside>
             </div>
           </div>
