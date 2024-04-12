@@ -1,7 +1,7 @@
 import React from "react";
-
+import Data from "../products.json"
 const ShopCategory = (
-  {filterItem,setItem,menuItems,setProducts,selectCategory}
+  {filterItem,menuItems,setProducts,selectCategory}
 ) => {
 
   return (
@@ -12,6 +12,7 @@ const ShopCategory = (
       <div>
         <button
           className={`m-2 ${selectCategory === "همه" ? "bg-warning " : ""}`}
+          onClick={()=>setProducts(Data)}
         >
           همه
         </button>

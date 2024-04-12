@@ -80,7 +80,6 @@ const Shop = () => {
                 <Search products={products} gridList={gridList} />
                 <ShopCategory
                   filterItem={filterItem}
-                  setItem={setProducts}
                   menuItems={menuItems}
                   setProducts={setProducts}
                   selectCategory={selectCategory}
