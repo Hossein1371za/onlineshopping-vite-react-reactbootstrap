@@ -24,6 +24,17 @@ const Shop = () => {
     setCurrentPage(pageNumber);
   };
 
+  const [selectCategory, setSelectCategory] = useState("همه");
+  const menuItems = [...new Set(Data.map((val) => val.category))];
+
+  const filterItem = (curcat) => {
+    const newItem = Data.filter((newVal) => {
+      return newVal.category === curcat;
+    });
+    setSelectCategory(curcat);
+    setProducts(newItem);
+  };
+
   return (
     <div>
       <PageHeader title="صفحه فروشگاهی ما" curPage="فروشگاه" />
@@ -51,20 +62,29 @@ const Shop = () => {
                   </div>
                 </div>
                 <div>
-                  <ProductsCards products={currentProduct} gridList={gridList} />
+                  <ProductsCards
+                    products={currentProduct}
+                    gridList={gridList}
+                  />
                 </div>
-                <Pagination 
-                productPerPage ={productPerPage}
-                totalProducts = {products.length}
-                paginate={paginate}
-                activePage= {currentPage}
+                <Pagination
+                  productPerPage={productPerPage}
+                  totalProducts={products.length}
+                  paginate={paginate}
+                  activePage={currentPage}
                 />
               </article>
             </div>
             <div className="col-lg-4 col-12">
               <aside>
-                <Search products={products} gridList={gridList}/>
-                <ShopCategory/>
+                <Search products={products} gridList={gridList} />
+                <ShopCategory
+                  filterItem={filterItem}
+                  setItem={setProducts}
+                  setProducts={setProducts}
+                  menuItems={menuItems}
+                  setSelectCategory={setSelectCategory}
+                />
               </aside>
             </div>
           </div>

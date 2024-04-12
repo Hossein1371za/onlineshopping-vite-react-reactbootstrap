@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
-const ShopCategory = () => {
-  return (
-    <div>ShopCategory</div>
-  )
-}
+const ShopCategory = (
+  filterItem,
+  setItem,
+  setProducts,
+  menuItems,
+  setSelectCategory
+) => {
+  return <div>ShopCategory</div>;
+};
 
-export default ShopCategory
+export default ShopCategory;
