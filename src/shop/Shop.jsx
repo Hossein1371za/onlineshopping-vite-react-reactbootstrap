@@ -8,6 +8,7 @@ import ProductsCards from "./ProductsCards";
 import Pagination from "./Pagination";
 import Search from "./Search";
 import ShopCategory from "./ShopCategory";
+import PopularPost from "./PopularPost";
 
 const showResults = "نمایش 1 - 12 از 139 محصول";
 
@@ -84,6 +85,7 @@ const Shop = () => {
                   setProducts={setProducts}
                   selectCategory={selectCategory}
                 />
+                <PopularPost/>
               </aside>
             </div>
           </div>
