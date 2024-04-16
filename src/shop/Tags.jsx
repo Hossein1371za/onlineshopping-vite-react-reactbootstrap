@@ -1,12 +1,35 @@
-import React from 'react'
+import React from "react";
+const title = "محبوب ترین برچسب ها"
 
-
-
+const tagsList = [
+  { link: "#", text: "envato" },
+  { link: "#", text: "themeforest" },
+  { link: "#", text: "codecanyon" },
+  { link: "#", text: "videohive" },
+  { link: "#", text: "audiojungle" },
+  { link: "#", text: "3docean" },
+  { link: "#", text: "envato" },
+  { link: "#", text: "themeforest" },
+  { link: "#", text: "codecanyon" },
+];
 
 const Tags = () => {
-  return (
-    <div></div>
-  )
-}
+  return <div className="widget widget-tags">
+    <div className="widget-header">
+        <h5 className="title">{title}</h5>
+    </div>
+    <ul className="widget-wrapper">
+        {
+            tagsList.map((item,index)=>{
+                return(
+                    <li key={index}>
+                        <a href={item.link}>{item.text}</a>
+                    </li>
+                )
+            })
+        }
+    </ul>
+  </div>;
+};
 
-export default Tags
+export default Tags;
