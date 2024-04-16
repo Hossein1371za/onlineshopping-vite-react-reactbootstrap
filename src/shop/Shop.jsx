@@ -9,6 +9,7 @@ import Pagination from "./Pagination";
 import Search from "./Search";
 import ShopCategory from "./ShopCategory";
 import PopularPost from "./PopularPost";
+import Tags from "./Tags";
 
 const showResults = "نمایش 1 - 12 از 139 محصول";
 
@@ -86,6 +87,7 @@ const Shop = () => {
                   selectCategory={selectCategory}
                 />
                 <PopularPost/>
+                <Tags />
               </aside>
             </div>
           </div>
