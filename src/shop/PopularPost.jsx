@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const title = "پست های محبوب"
-
+const title = "پست های محبوب";
 
 const postList = [
   {
@@ -35,7 +35,30 @@ const postList = [
 ];
 
 const PopularPost = () => {
-  return <div>x</div>;
+  return (
+    <div className="widget widget-post">
+      <div className="widget-header">
+        <h5 className="title">{title}</h5>
+      </div>
+      <ul className="widget-wrapper">
+        {postList.map((item) => {
+          return (
+            <li key={item.id} className="d-flex flex-wrap justify-content-between">
+              <div className="post-thumb">
+                <Link to={`/blog/${item.id}`}>
+                  <img src={item.imgUrl} alt="" />
+                </Link>
+              </div>
+              <div className="post-content">
+                <Link to={`/blog/${item.id}`}><h5>{item.title}</h5></Link>
+                <p>{item.date}</p>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 };
 
 export default PopularPost;
