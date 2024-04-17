@@ -76,7 +76,13 @@ const SingleProduct = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-6 col-12">detailes</div>
+                    <div className="col-md-6 col-12">
+                        <div className="post-contact-content">
+                          <div>
+                            {result.map(item => <p key={item.id}>{item.name}</p>)}
+                          </div>
+                        </div>
+                    </div>
                   </div>
                 </div>
                 <div className="review">بازدید</div>
