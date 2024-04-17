@@ -21,6 +21,26 @@ const SingleProduct = () => {
   return (
     <div>
         <PageHeader title={"محصول مورد نظر شما"} curPage={" فروشگاه/ محصول "}/>
+        <div className="shop-single padding-tb aside-bg">
+          <div className='container'>
+            <div className="row justify-content-center">
+              <div className='col-lg-8 col-12'>
+                <article>
+                  <div className="product-details">
+                    <div className="row align-items-center">
+                      <div className='col-md-6 col-12'>image</div>
+                      <div className='col-md-6 col-12'>detailes</div>
+                    </div>
+                  </div>
+                  <div className='review'>
+                    بازدید
+                  </div>
+                </article>
+              </div>
+              <div className='col-lg-4 col-12'>سمت چپ</div>
+            </div>
+          </div>
+        </div>
     </div>
   )
 }
