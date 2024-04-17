@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
+import ProductDisplay from "./ProductDisplay";
 
 const SingleProduct = () => {
   const [product, setProduct] = useState([]);
@@ -79,7 +80,7 @@ const SingleProduct = () => {
                     <div className="col-md-6 col-12">
                         <div className="post-contact-content">
                           <div>
-                            {result.map(item => <p key={item.id}>{item.name}</p>)}
+                            {result.map(item => <ProductDisplay key={item.id} item={item}/>)}
                           </div>
                         </div>
                     </div>
