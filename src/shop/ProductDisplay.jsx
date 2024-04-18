@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaStar,FaAngleDown } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const desc ="با نصب اپلیکیشن ما روی دستگاه خود از خرید لذت ببرید و در زمان صرفه جویی کنید فقط کافیست نصب کنید و شروع به خریدن کنید."
 
@@ -63,6 +64,12 @@ const ProductDisplay = ({ item }) => {
             <div className="discount-code mb-2">
                 <input type="text" placeholder="کد تخفیف..." onChange={(e)=>setCoupon(e.target.value)}/>
             </div>
+            <button className="lab-btn" type="submit">
+                <span>افزودن به سبد خرید</span>
+            </button>
+            <Link className="lab-btn bg-primary" to="/cart-page">
+                <span>بررسی</span>
+            </Link>
         </form>
       </div>
     </div>
