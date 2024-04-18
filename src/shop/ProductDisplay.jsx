@@ -5,10 +5,16 @@ const desc ="با نصب اپلیکیشن ما روی دستگاه خود از �
 
 const ProductDisplay = ({ item }) => {
   const { id, name, price, seller, ratingsCount, quantity } = item;
-  const [precouantity, setPrequantity] = useState(quantity);
+  const [preqouantity, setPrequantity] = useState(quantity);
   const [coupon, setCoupon] = useState("");
   const [size, setSize] = useState("انتخاب سایز");
   const [color, setColor] = useState("انتخاب رنگ");
+
+  const handleDec = ()=>{
+    if(preqouantity >= 1){
+        setPrequantity(preqouantity - 1)
+    }
+  }
 
   return (
     <div>
@@ -38,7 +44,7 @@ const ProductDisplay = ({ item }) => {
                     <option>XXL</option>
                 </select>
             </div>
-            <div className="select-product color">
+            <div >
                 <select value={color} onChange={(e)=>setColor(e.target.value)}>
                     <option>انتخاب رنگ</option>
                     <option>صورتی</option>
@@ -48,6 +54,11 @@ const ProductDisplay = ({ item }) => {
                     <option>ابی</option>
                     <option>مشکی</option>
                 </select>
+            </div>
+            <div className="cart-plus-minus">
+                <div className="dec qtybutton" onClick={handleDec}>-</div>
+                <input className="cart-plus-minus-box" type="text" name="qtybutton" id="qtybutton" value={preqouantity} onChange={(e)=>setPrequantity(parseInt(e.target.value ,10))}/>
+                <div className="inc qtybutton" onClick={()=>setPrequantity(preqouantity + 1)}>+</div>
             </div>
         </form>
       </div>
