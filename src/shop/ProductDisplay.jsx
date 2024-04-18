@@ -60,6 +60,9 @@ const ProductDisplay = ({ item }) => {
                 <input className="cart-plus-minus-box" type="text" name="qtybutton" id="qtybutton" value={preqouantity} onChange={(e)=>setPrequantity(parseInt(e.target.value ,10))}/>
                 <div className="inc qtybutton" onClick={()=>setPrequantity(preqouantity + 1)}>+</div>
             </div>
+            <div className="discount-code mb-2">
+                <input type="text" placeholder="کد تخفیف..." onChange={(e)=>setCoupon(e.target.value)}/>
+            </div>
         </form>
       </div>
     </div>
