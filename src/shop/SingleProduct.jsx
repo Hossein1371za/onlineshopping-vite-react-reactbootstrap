@@ -28,7 +28,6 @@ const SingleProduct = () => {
     // });
   }, []);
   const result = product.filter((p) => p.id === id);
-  console.log(result);
   return (
     <div>
       <PageHeader title={"محصول مورد نظر شما"} curPage={" فروشگاه/ محصول "} />
