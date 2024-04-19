@@ -1282,6 +1282,9 @@ footer.style-2 .footer-top .footer-item.our-address .footer-inner .footer-conten
 .course-item .course-inner .course-content .course-category .course-reiew .ratting-count {
     margin-left: 10px
 }
+.entry-content p{
+    margin-right: 10px;
+}
 
 footer.style-2 .footer-bottom .section-wrapper .footer-bottom-list a:last-child,
 footer.style-2 .footer-top .footer-item.our-address .footer-inner .footer-content .content ul li i,
@@ -7679,6 +7682,7 @@ button {
 }
 
 .shop-single .review .review-content .review-showing .content li .post-content .entry-meta .posted-on a {
+    padding-left: 20px;
     padding-right: 20px;
     font-size: 18px;
     font-weight: 500;
