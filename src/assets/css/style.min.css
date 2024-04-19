@@ -7730,7 +7730,7 @@ button {
     border-bottom: 4px dotted #f16126;
     width: 20px;
     bottom: -20px;
-    left: 55px
+    right: 55px;
 }
 
 .shop-single .review .review-content .review-showing .client-review .review-form form input {

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 const reviwtitle = "اضافه کردن بازدید";
+import { FaStar } from "react-icons/fa";
 
 let ReviewList = [
   {
@@ -76,6 +77,39 @@ const Reviwe = () => {
                     })
                 }
             </ul>
+            <div className="client-review">
+                <div className="review-form">
+                    <div className="review-title">
+                        <h5>{reviwtitle}</h5>
+                    </div>
+                    <form className="row">
+                        <div className="col-md-4 col-12">
+                            <input type="text" name="name" id="name"  placeholder="نام و نام خانوادگی..."/>
+                        </div>
+                        <div className="col-md-4 col-12">
+                            <input type="email" name="email" id="email"  placeholder="ایمیل..."/>
+                        </div>
+                        <div className="col-md-4 col-12">
+                            <div className="rating">
+                                <span className="ms-2">امتیاز شما</span>
+                                <FaStar className="text-warning"/>
+                                <FaStar className="text-warning"/>
+                                <FaStar className="text-warning"/>
+                                <FaStar className="text-warning"/>
+                                <FaStar className="text-warning"/>
+                            </div>
+                        </div>
+                        <div className="col-md-12 col-12">
+                            <textarea name="massage" id="massage" rows={8} placeholder="نظر شما ..."></textarea>
+                        </div>
+                        <div className="col-12">
+                            <button type="submit" className="default-button">
+                                <span>ارسال نظر</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
       </div>
     </>
