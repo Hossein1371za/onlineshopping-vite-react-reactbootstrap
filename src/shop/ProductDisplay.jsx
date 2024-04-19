@@ -24,6 +24,18 @@ const ProductDisplay = ({ item }) => {
       color,
       coupon,
     };
+    const existingCart = JSON.parse(localStorage.getItem("cart"))  || []
+    const existingIndexProduct = existingCart.findIndex((item) => item.id === id)
+    if(existingIndexProduct !== -1){
+      existingCart[existingIndexProduct].quantity += prequantity
+    }else{
+      existingCart.push(product)
+    }
+    localStorage.setItem("cart",JSON.stringify(existingCart))
+    setPrequantity(1)
+    setSize("انتخاب سایز")
+    setColor("انتخاب رنگ")
+    setCoupon("")
   };
 
   const handleDec = () => {
