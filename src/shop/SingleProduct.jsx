@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import ProductDisplay from "./ProductDisplay";
+import Reviwe from "./Reviwe";
 
 const SingleProduct = () => {
   const [product, setProduct] = useState([]);
@@ -77,7 +78,7 @@ const SingleProduct = () => {
                       </div>
                     </div>
                     <div className="col-md-6 col-12">
-                        <div className="post-contact-content">
+                        <div className="post-contact">
                           <div>
                             {result.map(item => <ProductDisplay key={item.id} item={item}/>)}
                           </div>
@@ -85,7 +86,9 @@ const SingleProduct = () => {
                     </div>
                   </div>
                 </div>
-                <div className="review">بازدید</div>
+                <div className="review">
+                  <Reviwe/>
+                </div>
               </article>
             </div>
             <div className="col-lg-4 col-12">سمت چپ</div>
