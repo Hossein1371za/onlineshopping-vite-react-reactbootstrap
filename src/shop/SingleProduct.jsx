@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import PopularPost from "./PopularPost"
+import Tags from "./Tags"
 // import axios from 'axios';
 import PageHeader from "../components/PageHeader";
 import { FaAngleLeft,FaAngleRight } from "react-icons/fa";
@@ -91,7 +93,12 @@ const SingleProduct = () => {
                 </div>
               </article>
             </div>
-            <div className="col-lg-4 col-12">سمت چپ</div>
+            <div className="col-lg-4 col-12">
+              <aside className="ps-lg-4">
+                <PopularPost />
+                <Tags />
+              </aside>
+            </div>
           </div>
         </div>
       </div>
