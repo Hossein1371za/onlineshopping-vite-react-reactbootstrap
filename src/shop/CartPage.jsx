@@ -23,7 +23,19 @@ const CartPage = () => {
         localStorage.setItem("cart",JSON.stringify(cartItems))
     }
   }
+  const handleRemoveItem = (item)=>{
+    const updateCart = cartItems.filter((cartItems)=> cartItems.id !== item.id)
+    setCartItems(updateCart)
+    updateLocalStorge(updateCart)
+  }
+  const updateLocalStorge = (cart)=>{
+    localStorage.setItem("cart",JSON.stringify(cart))
+  }
+  const cartSubtotal = cartItems.reduce((total,item)=>{
+    return total + totalPrice(item)
+  },0)
   return <div>CartPage</div>;
 };
+const orderTotal = cartSubtotal
 
 export default CartPage;
