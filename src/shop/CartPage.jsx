@@ -3,42 +3,56 @@ import PageHeader from "../components/PageHeader";
 import { Link } from "react-router-dom";
 
 const CartPage = () => {
-  const [cartItems, setCartItems] = useState([]);
-  console.log(cartItems);
+    const [cartItems, setCartItems] = useState([]);
+    console.log(cartItems);
+  
+    useEffect(() => {
+      const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      setCartItems(storedCartItems);
+    }, []);
+  
+    const totalPrice = (item) => {
+      return item.price * item.quantity;
+    };
+  
+    const handleIncrease = (item) => {
+      const updatedCart = cartItems.map((cartItem) => {
+        if (cartItem.id === item.id) {
+          return { ...cartItem, quantity: cartItem.quantity + 1 };
+        }
+        return cartItem;
+      });
+      setCartItems(updatedCart);
+      updateLocalStorage(updatedCart);
+    };
+  
+    const handleDecrease = (item) => {
+      if (item.quantity > 1) {
+        const updatedCart = cartItems.map((cartItem) => {
+          if (cartItem.id === item.id) {
+            return { ...cartItem, quantity: cartItem.quantity - 1 };
+          }
+          return cartItem;
+        });
+        setCartItems(updatedCart);
+        updateLocalStorage(updatedCart);
+      }
+    };
+  
+    const handleRemoveItem = (item) => {
+      const updatedCart = cartItems.filter((cartItem) => cartItem.id !== item.id);
+      setCartItems(updatedCart);
+      updateLocalStorage(updatedCart);
+    };
+  
+    const updateLocalStorage = (cart) => {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    };
+  
+    const cartSubtotal = cartItems.reduce((total, item) => {
+      return total + totalPrice(item);
+    }, 0);
 
-  useEffect(() => {
-    const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItems(storedCartItems);
-  }, []);
-  const totalPrice = (item) => {
-    return item.price * item.quantity;
-  };
-  const handleIncrease = (item) => {
-    item.quantity += 1;
-    setCartItems(...cartItems);
-
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-  };
-  const handleDecrease = (item) => {
-    if (item.quantity > 1) {
-      item.quantity -= 1;
-      setCartItems(...cartItems);
-      localStorage.setItem("cart", JSON.stringify(cartItems));
-    }
-  };
-  const handleRemoveItem = (item) => {
-    const updateCart = cartItems.filter(
-      (cartItems) => cartItems.id !== item.id
-    );
-    setCartItems(updateCart);
-    updateLocalStorge(updateCart);
-  };
-  const updateLocalStorge = (cart) => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  };
-  const cartSubtotal = cartItems.reduce((total, item) => {
-    return total + totalPrice(item);
-  }, 0);
   const orderTotal = cartSubtotal;
 
   return (
@@ -78,7 +92,7 @@ const CartPage = () => {
                         <div className="cart-plus-minus">
                             <div className="dec qtybutton" onClick={()=>handleDecrease(item)}>-</div>
                             <input type="text" className="cart-plus-minus-box" name="qtybutton" value={item.quantity}/>
-                            <div className="inc qtybutton" onClick={()=>handleDecrease(item)}>+</div>
+                            <div className="inc qtybutton" onClick={()=>handleIncrease(item)}>+</div>
                         </div>
                       </td>
                     </tr>
