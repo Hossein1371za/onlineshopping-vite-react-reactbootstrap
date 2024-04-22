@@ -1,57 +1,57 @@
 import React, { useEffect, useState } from "react";
 import PageHeader from "../components/PageHeader";
 import { Link } from "react-router-dom";
-
+import delImgUrl from "../assets/images/shop/del.png"
 const CartPage = () => {
-    const [cartItems, setCartItems] = useState([]);
-    console.log(cartItems);
-  
-    useEffect(() => {
-      const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
-      setCartItems(storedCartItems);
-    }, []);
-  
-    const totalPrice = (item) => {
-      return item.price * item.quantity;
-    };
-  
-    const handleIncrease = (item) => {
+  const [cartItems, setCartItems] = useState([]);
+  console.log(cartItems);
+
+  useEffect(() => {
+    const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartItems(storedCartItems);
+  }, []);
+
+  const totalPrice = (item) => {
+    return item.price * item.quantity;
+  };
+
+  const handleIncrease = (item) => {
+    const updatedCart = cartItems.map((cartItem) => {
+      if (cartItem.id === item.id) {
+        return { ...cartItem, quantity: cartItem.quantity + 1 };
+      }
+      return cartItem;
+    });
+    setCartItems(updatedCart);
+    updateLocalStorage(updatedCart);
+  };
+
+  const handleDecrease = (item) => {
+    if (item.quantity > 1) {
       const updatedCart = cartItems.map((cartItem) => {
         if (cartItem.id === item.id) {
-          return { ...cartItem, quantity: cartItem.quantity + 1 };
+          return { ...cartItem, quantity: cartItem.quantity - 1 };
         }
         return cartItem;
       });
       setCartItems(updatedCart);
       updateLocalStorage(updatedCart);
-    };
-  
-    const handleDecrease = (item) => {
-      if (item.quantity > 1) {
-        const updatedCart = cartItems.map((cartItem) => {
-          if (cartItem.id === item.id) {
-            return { ...cartItem, quantity: cartItem.quantity - 1 };
-          }
-          return cartItem;
-        });
-        setCartItems(updatedCart);
-        updateLocalStorage(updatedCart);
-      }
-    };
-  
-    const handleRemoveItem = (item) => {
-      const updatedCart = cartItems.filter((cartItem) => cartItem.id !== item.id);
-      setCartItems(updatedCart);
-      updateLocalStorage(updatedCart);
-    };
-  
-    const updateLocalStorage = (cart) => {
-      localStorage.setItem("cart", JSON.stringify(cart));
-    };
-  
-    const cartSubtotal = cartItems.reduce((total, item) => {
-      return total + totalPrice(item);
-    }, 0);
+    }
+  };
+
+  const handleRemoveItem = (item) => {
+    const updatedCart = cartItems.filter((cartItem) => cartItem.id !== item.id);
+    setCartItems(updatedCart);
+    updateLocalStorage(updatedCart);
+  };
+
+  const updateLocalStorage = (cart) => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
+
+  const cartSubtotal = cartItems.reduce((total, item) => {
+    return total + totalPrice(item);
+  }, 0);
 
   const orderTotal = cartSubtotal;
 
@@ -90,10 +90,31 @@ const CartPage = () => {
                       <td className="cat-price number">{item.price}</td>
                       <td className="cat-quantity">
                         <div className="cart-plus-minus">
-                            <div className="dec qtybutton" onClick={()=>handleDecrease(item)}>-</div>
-                            <input type="text" className="cart-plus-minus-box" name="qtybutton" value={item.quantity}/>
-                            <div className="inc qtybutton" onClick={()=>handleIncrease(item)}>+</div>
+                          <div
+                            className="dec qtybutton"
+                            onClick={() => handleDecrease(item)}
+                          >
+                            -
+                          </div>
+                          <input
+                            type="text"
+                            className="cart-plus-minus-box"
+                            name="qtybutton"
+                            value={item.quantity}
+                          />
+                          <div
+                            className="inc qtybutton"
+                            onClick={() => handleIncrease(item)}
+                          >
+                            +
+                          </div>
                         </div>
+                      </td>
+                      <td className="cat-toprice number">{totalPrice(item)} تومان</td>
+                      <td className="cat-edit">
+                        <a href="#" onClick={()=> handleRemoveItem(item)}>
+                          <img src={delImgUrl} alt="" />
+                        </a>
                       </td>
                     </tr>
                   ))}
