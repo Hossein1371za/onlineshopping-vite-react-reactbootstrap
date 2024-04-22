@@ -175,7 +175,25 @@ const CartPage = () => {
                       <button type="submit" className="mt-3">ارسال آدرس</button>
                     </div>
                   </div>
-                  <div className="col-md-6 col-12">چپ</div>
+                  <div className="col-md-6 col-12">
+                    <div className="cart-overview">
+                      <h3>مجموع سبد خرید</h3>
+                      <ul className="lab-ul">
+                        <li>
+                          <span className="pull-left">جمع سبد خرید</span>
+                          <p className="pull-right">{cartSubtotal} تومان</p>
+                        </li>
+                        <li>
+                          <span className="pull-left">هزینه ارسال و بسته بندی</span>
+                          <p className="pull-right">هزینه رایگان است</p>
+                        </li>
+                        <li>
+                          <span className="pull-left">کل سفارش</span>
+                          <p className="pull-right">{orderTotal} تومان</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
