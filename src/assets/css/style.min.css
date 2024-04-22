@@ -7969,7 +7969,7 @@ button {
 .shop-cart .section-wrapper .cart-bottom .cart-checkout-box .coupon input[type=submit] {
     color: #fff;
     font-weight: 500;
-    margin-left: -10px;
+    margin-right: 10px;
     cursor: pointer;
     -webkit-border-radius: 0 3px 3px 0;
     -moz-border-radius: 0 3px 3px 0;
@@ -8001,7 +8001,7 @@ button {
     cursor: pointer;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
-    transition: all .3s ease
+    transition: all .3s ease;
 }
 
 @media(max-width: 575px) {
@@ -8058,7 +8058,7 @@ button {
 
 .shop-cart .section-wrapper .cart-bottom .shiping-box .calculate-shiping .outline-select .select-icon {
     top: 0;
-    right: 0;
+    left: 0;
     padding: 9px 20px;
     color: #fff;
     border: 1px solid #ecf0f3;

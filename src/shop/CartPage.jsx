@@ -2,6 +2,12 @@ import React, { useEffect, useState } from "react";
 import PageHeader from "../components/PageHeader";
 import { Link } from "react-router-dom";
 import delImgUrl from "../assets/images/shop/del.png"
+import { FaAngleDown } from "react-icons/fa";
+
+
+
+
+
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
   console.log(cartItems);
@@ -120,6 +126,40 @@ const CartPage = () => {
                   ))}
                 </tbody>
               </table>
+            </div>
+            <div className="cart-bottom">
+              <div className="cart-checkout-box">
+                <form className="coupon">
+                  <input className="cart-page-input-text" type="text" name="coupon" id="coupon" placeholder ="کد تخفیف..."/>
+                  <input type="submit" value="ارسال کد تخفیف"/>
+                </form>
+                <form className="cart-checkout">
+                  <input type="submit" value="تازه سازی خرید"/>
+                  <div>نوع پرداخت</div>
+                </form>
+              </div>
+              <div className="shiping-box">
+                <div className="row">
+                  <div className="col-md-6 col-12">
+                    <div className="calculate-shiping">
+                      <h3>هزینه ارسال</h3>
+                      <div className="outline-select">
+                        <select>
+                          <option value="ایران">ایران</option>
+                          <option value="امریکا">آمریکا</option>
+                          <option value="انگلیس">انگلیس</option>
+                          <option value="چین">چین</option>
+                          <option value="پاکستان">پاکستان</option>
+                        </select>
+                        <span className="select-icon">
+                          <FaAngleDown/>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6 col-12">چپ</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
