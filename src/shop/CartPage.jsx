@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PageHeader from "../components/PageHeader";
 import { Link } from "react-router-dom";
-import delImgUrl from "../assets/images/shop/del.png"
+import delImgUrl from "../assets/images/shop/del.png";
 import { FaAngleDown } from "react-icons/fa";
-
-
-
-
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -116,9 +112,11 @@ const CartPage = () => {
                           </div>
                         </div>
                       </td>
-                      <td className="cat-toprice number">{totalPrice(item)} تومان</td>
+                      <td className="cat-toprice number">
+                        {totalPrice(item)} تومان
+                      </td>
                       <td className="cat-edit">
-                        <a href="#" onClick={()=> handleRemoveItem(item)}>
+                        <a href="#" onClick={() => handleRemoveItem(item)}>
                           <img src={delImgUrl} alt="" />
                         </a>
                       </td>
@@ -130,11 +128,17 @@ const CartPage = () => {
             <div className="cart-bottom">
               <div className="cart-checkout-box">
                 <form className="coupon">
-                  <input className="cart-page-input-text" type="text" name="coupon" id="coupon" placeholder ="کد تخفیف..."/>
-                  <input type="submit" value="ارسال کد تخفیف"/>
+                  <input
+                    className="cart-page-input-text"
+                    type="text"
+                    name="coupon"
+                    id="coupon"
+                    placeholder="کد تخفیف..."
+                  />
+                  <input type="submit" value="ارسال کد تخفیف" />
                 </form>
                 <form className="cart-checkout">
-                  <input type="submit" value="تازه سازی خرید"/>
+                  <input type="submit" value="تازه سازی خرید" />
                   <div>نوع پرداخت</div>
                 </form>
               </div>
@@ -152,9 +156,23 @@ const CartPage = () => {
                           <option value="پاکستان">پاکستان</option>
                         </select>
                         <span className="select-icon">
-                          <FaAngleDown/>
+                          <FaAngleDown />
                         </span>
                       </div>
+                      <div className="outline-select shiping-select">
+                        <select>
+                          <option value="ایران">تهران</option>
+                          <option value="امریکا">نیو یورک</option>
+                          <option value="انگلیس">لندن</option>
+                          <option value="چین">پکن</option>
+                          <option value="پاکستان">اسلام اباد</option>
+                        </select>
+                        <span className="select-icon">
+                          <FaAngleDown />
+                        </span>
+                      </div>
+                      <input type="text" name="postalCode" id="postalCode" placeholder="کد پستی" className="cart-page-input-tet"/>
+                      <button type="submit" className="mt-3">ارسال آدرس</button>
                     </div>
                   </div>
                   <div className="col-md-6 col-12">چپ</div>
