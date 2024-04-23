@@ -28,10 +28,25 @@ const CheckOutPage = () => {
           <div className="modal-content">
             <div className="modal-body">
               <div className="tabs mt-3">
-                <ul className="nav nav-tabs" id="myTab">
-                  <li>
-                    <a href="#">
-                      <img src="https://i.imgur.com/sB4jftM.png" width="80" alt="" />
+                <ul className="nav nav-tabs" id="myTab" role="tablist">
+                  <li className="nav-item" role="presentation">
+                    <a
+                      href="#"
+                      className={`nav-link ${
+                        activeTab === "visa" ? "active" : ""
+                      }`}
+                      id="visa-tab"
+                      data-toggle="tab"
+                      role="tab"
+                      aria-controls="visa"
+                      aria-selected={activeTab === "visa"}
+                      onClick={()=> handleTabChange("visa")}
+                    >
+                      <img
+                        src="https://i.imgur.com/sB4jftM.png"
+                        width="80"
+                        alt=""
+                      />
                     </a>
                   </li>
                 </ul>
