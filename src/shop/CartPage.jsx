@@ -3,6 +3,7 @@ import PageHeader from "../components/PageHeader";
 import { Link } from "react-router-dom";
 import delImgUrl from "../assets/images/shop/del.png";
 import { FaAngleDown } from "react-icons/fa";
+import CheckOutPage from "./CheckOutPage"
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -139,7 +140,9 @@ const CartPage = () => {
                 </form>
                 <form className="cart-checkout">
                   <input type="submit" value="تازه سازی خرید" />
-                  <div>نوع پرداخت</div>
+                  <div>
+                    <CheckOutPage />
+                  </div>
                 </form>
               </div>
               <div className="shiping-box">
