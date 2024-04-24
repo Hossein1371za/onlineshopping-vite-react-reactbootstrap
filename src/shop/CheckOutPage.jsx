@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { FaEye } from "react-icons/fa";
 import "../components/modal.css";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const CheckOutPage = () => {
   const [show, setShow] = useState(false);
@@ -13,10 +14,15 @@ const CheckOutPage = () => {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-  const handleOrderConfirm= ()=>{
-    alert("ثبت سفارش شما با موفقیت انجام شد")
-    localStorage.removeItem("cart")
-  }
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
+  const handleOrderConfirm = () => {
+    alert("ثبت سفارش شما با موفقیت انجام شد");
+    localStorage.removeItem("cart");
+    navigate(from, { replace: true });
+  };
 
   return (
     <div className="modaCard">
@@ -143,7 +149,10 @@ const CheckOutPage = () => {
                           </div>
                         </div>
                         <div className="px-5 pay">
-                          <button className="btn btn-success btn-block" onClick={handleOrderConfirm}>
+                          <button
+                            className="btn btn-success btn-block"
+                            onClick={handleOrderConfirm}
+                          >
                             ثبت سفارش
                           </button>
                         </div>
@@ -212,7 +221,10 @@ const CheckOutPage = () => {
                           </div>
                         </div>
                         <div className="px-5 pay">
-                          <button className="btn btn-success btn-block" onClick={handleOrderConfirm}>
+                          <button
+                            className="btn btn-success btn-block"
+                            onClick={handleOrderConfirm}
+                          >
                             اضافه کردن پیپل
                           </button>
                         </div>
