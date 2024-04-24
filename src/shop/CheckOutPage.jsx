@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { FaEye } from "react-icons/fa";
-import "../components/modal.css"
+import "../components/modal.css";
 
 const CheckOutPage = () => {
   const [show, setShow] = useState(false);
@@ -107,7 +107,9 @@ const CheckOutPage = () => {
                             max="999"
                           />
                           <span>شماره ی کارت</span>
-                          <i><FaEye /></i>
+                          <i>
+                            <FaEye />
+                          </i>
                         </div>
                         <div className="d-flex flex-row">
                           <div className="inputbox">
@@ -136,7 +138,78 @@ const CheckOutPage = () => {
                           </div>
                         </div>
                         <div className="px-5 pay">
-                          <button className="btn btn-success btn-block">ثبت سفارش</button>
+                          <button className="btn btn-success btn-block">
+                            ثبت سفارش
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={`tab-pane fade ${
+                      activeTab === "paypal" ? "show active" : ""
+                    }`}
+                    id="paypal"
+                    role="tabpanel"
+                    aria-labelledby="paypal-tab"
+                  >
+                    <div className="mt-4 mx-4">
+                      <div className="text-center">
+                        <h5>حساب پیپل</h5>
+                      </div>
+                      <div className="form mt-3">
+                        <div className="inputbox">
+                          <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            className="form-control"
+                            required
+                          />
+                          <span>ایمیل خود را وارد کنید</span>
+                        </div>
+                        <div className="inputbox">
+                          <input
+                            type="text"
+                            name="number"
+                            id="number"
+                            className="form-control"
+                            required
+                            min="1"
+                            max="999"
+                          />
+                          <span>نام ...</span>
+                        </div>
+                        <div className="d-flex flex-row">
+                        <div className="inputbox">
+                          <input
+                            type="text"
+                            name="number"
+                            id="number"
+                            min="1"
+                            max="999"
+                            className="form-control"
+                            required
+                          />
+                          <span>اطلاعات اضافه</span>
+                        </div>
+                        <div className="inputbox">
+                          <input
+                            type="text"
+                            name="number"
+                            id="number"
+                            min="1"
+                            max="999"
+                            className="form-control"
+                            required
+                          />
+                          <span></span>
+                        </div>
+                        </div>
+                        <div className="px-5 pay">
+                          <button className="btn btn-success btn-block">
+                            اضافه کردن پیپل
+                          </button>
                         </div>
                       </div>
                     </div>
