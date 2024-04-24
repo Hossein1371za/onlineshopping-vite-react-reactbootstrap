@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
+import { FaEye } from "react-icons/fa";
+import "../components/modal.css"
 
 const CheckOutPage = () => {
   const [show, setShow] = useState(false);
@@ -31,7 +33,7 @@ const CheckOutPage = () => {
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
                   <li className="nav-item" role="presentation">
                     <a
-                      href="#"
+                      href="#visa"
                       className={`nav-link ${
                         activeTab === "visa" ? "active" : ""
                       }`}
@@ -40,16 +42,106 @@ const CheckOutPage = () => {
                       role="tab"
                       aria-controls="visa"
                       aria-selected={activeTab === "visa"}
-                      onClick={()=> handleTabChange("visa")}
+                      onClick={() => handleTabChange("visa")}
                     >
                       <img
                         src="https://i.imgur.com/sB4jftM.png"
                         width="80"
-                        alt=""
+                        alt="visa"
+                      />
+                    </a>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <a
+                      href="#paypal"
+                      className={`nav-link ${
+                        activeTab === "paypal" ? "active" : ""
+                      }`}
+                      id="paypal-tab"
+                      data-toggle="tab"
+                      role="tab"
+                      aria-controls="paypal"
+                      aria-selected={activeTab === "paypal"}
+                      onClick={() => handleTabChange("paypal")}
+                    >
+                      <img
+                        src="https://i.imgur.com/yK7eDD1.png"
+                        width="80"
+                        alt="paypal"
                       />
                     </a>
                   </li>
                 </ul>
+                <div className="tab-content" id="myTabContent">
+                  <div
+                    className={`tab-pane fade ${
+                      activeTab === "visa" ? "show active" : ""
+                    }`}
+                    id="visa"
+                    role="tabpanel"
+                    aria-labelledby="visa-tab"
+                  >
+                    <div className="mt-4 mx-4">
+                      <div className="text-center">
+                        <h5>کارت اعتباری</h5>
+                      </div>
+                      <div className="form mt-3">
+                        <div className="inputbox">
+                          <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            className="form-control"
+                            required
+                          />
+                          <span>نام دارنده ی کارت</span>
+                        </div>
+                        <div className="inputbox">
+                          <input
+                            type="text"
+                            name="number"
+                            id="number"
+                            className="form-control"
+                            required
+                            min="1"
+                            max="999"
+                          />
+                          <span>شماره ی کارت</span>
+                          <i><FaEye /></i>
+                        </div>
+                        <div className="d-flex flex-row">
+                          <div className="inputbox">
+                            <input
+                              type="text"
+                              name="number"
+                              id="number"
+                              className="form-control"
+                              required
+                              min="1"
+                              max="999"
+                            />
+                            <span>تاریخ انقضا</span>
+                          </div>
+                          <div className="inputbox">
+                            <input
+                              type="text"
+                              name="number"
+                              id="number"
+                              className="form-control"
+                              required
+                              min="1"
+                              max="999"
+                            />
+                            <span>CVV</span>
+                          </div>
+                        </div>
+                        <div className="px-5 pay">
+                          <button className="btn btn-success btn-block">ثبت سفارش</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
