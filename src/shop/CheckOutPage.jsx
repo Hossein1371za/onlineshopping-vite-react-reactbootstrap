@@ -13,6 +13,11 @@ const CheckOutPage = () => {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
+  const handleOrderConfirm= ()=>{
+    alert("ثبت سفارش شما با موفقیت انجام شد")
+    localStorage.removeItem("cart")
+  }
+
   return (
     <div className="modaCard">
       <Button variant="primary" className="py-2" onClick={handleShow}>
@@ -138,7 +143,7 @@ const CheckOutPage = () => {
                           </div>
                         </div>
                         <div className="px-5 pay">
-                          <button className="btn btn-success btn-block">
+                          <button className="btn btn-success btn-block" onClick={handleOrderConfirm}>
                             ثبت سفارش
                           </button>
                         </div>
@@ -181,33 +186,33 @@ const CheckOutPage = () => {
                           <span>نام ...</span>
                         </div>
                         <div className="d-flex flex-row">
-                        <div className="inputbox">
-                          <input
-                            type="text"
-                            name="number"
-                            id="number"
-                            min="1"
-                            max="999"
-                            className="form-control"
-                            required
-                          />
-                          <span>اطلاعات اضافه</span>
-                        </div>
-                        <div className="inputbox">
-                          <input
-                            type="text"
-                            name="number"
-                            id="number"
-                            min="1"
-                            max="999"
-                            className="form-control"
-                            required
-                          />
-                          <span></span>
-                        </div>
+                          <div className="inputbox">
+                            <input
+                              type="text"
+                              name="number"
+                              id="number"
+                              min="1"
+                              max="999"
+                              className="form-control"
+                              required
+                            />
+                            <span>اطلاعات اضافه</span>
+                          </div>
+                          <div className="inputbox">
+                            <input
+                              type="text"
+                              name="number"
+                              id="number"
+                              min="1"
+                              max="999"
+                              className="form-control"
+                              required
+                            />
+                            <span></span>
+                          </div>
                         </div>
                         <div className="px-5 pay">
-                          <button className="btn btn-success btn-block">
+                          <button className="btn btn-success btn-block" onClick={handleOrderConfirm}>
                             اضافه کردن پیپل
                           </button>
                         </div>
@@ -215,6 +220,10 @@ const CheckOutPage = () => {
                     </div>
                   </div>
                 </div>
+                <p className="mt-3 px-4 p-Disclaimer">
+                  با نصب اپلیکیشن ما روی دستگاه خود از خرید لذت ببرید و در زمان
+                  صرفه جویی کنید فقط کافیست نصب کنید و شروع به خریدن کنید.
+                </p>
               </div>
             </div>
           </div>
