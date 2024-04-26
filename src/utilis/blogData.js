@@ -1,4 +1,6 @@
-import { FaRegUser, FaCalendarPlus } from "react-icons/fa";
+// import { FaRegUser, FaCalendarPlus } from "react-icons/fa";
+
+
 const blogList = [
   {
     id: 1,
@@ -10,7 +12,7 @@ const blogList = [
     btnText: "Read More",
     metaList: [
       {
-        // iconName: <FaRegUser/>,
+        // iconName: <FaRegUser />,
         text: "حسین",
       },
       {
