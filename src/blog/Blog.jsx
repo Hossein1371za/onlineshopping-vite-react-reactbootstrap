@@ -2,6 +2,7 @@ import React from "react";
 import PageHeader from "../components/PageHeader";
 import blogList from "../utilis/blogData";
 import { Link } from "react-router-dom";
+import { FaExternalLinkAlt,FaCommentDots } from "react-icons/fa";
 
 const Blog = () => {
   return (
@@ -30,6 +31,16 @@ const Blog = () => {
                               ))
                             }
                           </ul>
+                        </div>
+                        <p>{blog.desc}</p>
+                      </div>
+                      <div className="post-footer">
+                        <div className="pf-left">
+                          <Link className="lab-btn-text" to={`/blog/${blog.id}`}>{blog.btnText} <i><FaExternalLinkAlt/></i></Link>
+                        </div>
+                        <div className="pf-right">
+                            <i><FaCommentDots/></i>
+                            <span className="comment-count">{blog.commentCount}</span>
                         </div>
                       </div>
                     </div>
