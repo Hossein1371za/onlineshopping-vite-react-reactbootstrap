@@ -10,11 +10,11 @@ const blogList = [
     btnText: "Read More",
     metaList: [
       {
-        iconName: <FaRegUser />,
+        // iconName: <FaRegUser/>,
         text: "حسین",
       },
       {
-        iconName: <FaCalendarPlus />,
+        // iconName: <FaCalendarPlus />,
         text: "Jun 05,2022",
       },
     ],
@@ -29,11 +29,11 @@ const blogList = [
     btnText: "Read More",
     metaList: [
       {
-        iconName: <FaRegUser />,
+        // iconName: <FaRegUser />,
         text: "حسین",
       },
       {
-        iconName: <FaCalendarPlus />,
+        // iconName: <FaCalendarPlus />,
         text: "Jun 05,2022",
       },
     ],
@@ -48,11 +48,11 @@ const blogList = [
     btnText: "Read More",
     metaList: [
       {
-        iconName: <FaRegUser />,
+        // iconName: <FaRegUser />,
         text: "حسین",
       },
       {
-        iconName: <FaCalendarPlus />,
+        // iconName: <FaCalendarPlus />,
         text: "Jun 05,2022",
       },
     ],
@@ -67,11 +67,11 @@ const blogList = [
     btnText: "Read More",
     metaList: [
       {
-        iconName: <FaRegUser />,
+        // iconName: <FaRegUser />,
         text: "حسین",
       },
       {
-        iconName: <FaCalendarPlus />,
+        // iconName: <FaCalendarPlus />,
         text: "Jun 05,2022",
       },
     ],
@@ -86,11 +86,11 @@ const blogList = [
     btnText: "Read More",
     metaList: [
       {
-        iconName: <FaRegUser />,
+        // iconName: <FaRegUser />,
         text: "حسین",
       },
       {
-        iconName: <FaCalendarPlus />,
+        // iconName: <FaCalendarPlus />,
         text: "Jun 05,2022",
       },
     ],
@@ -105,11 +105,11 @@ const blogList = [
     btnText: "Read More",
     metaList: [
       {
-        iconName: <FaRegUser />,
+        // iconName: <FaRegUser />,
         text: "حسین",
       },
       {
-        iconName: <FaCalendarPlus />,
+        // iconName: <FaCalendarPlus />,
         text: "Jun 05,2022",
       },
     ],
@@ -124,11 +124,11 @@ const blogList = [
     btnText: "Read More",
     metaList: [
       {
-        iconName: <FaRegUser />,
+        // iconName: <FaRegUser />,
         text: "حسین",
       },
       {
-        iconName: <FaCalendarPlus />,
+        // iconName: <FaCalendarPlus />,
         text: "Jun 05,2022",
       },
     ],
@@ -143,11 +143,11 @@ const blogList = [
     btnText: "Read More",
     metaList: [
       {
-        iconName: <FaRegUser />,
+        // iconName: <FaRegUser />,
         text: "حسین",
       },
       {
-        iconName: <FaCalendarPlus />,
+        // iconName: <FaCalendarPlus />,
         text: "Jun 05,2022",
       },
     ],
@@ -162,11 +162,11 @@ const blogList = [
     btnText: "Read More",
     metaList: [
       {
-        iconName: <FaRegUser />,
+        // iconName: <FaRegUser />,
         text: "حسین",
       },
       {
-        iconName: <FaCalendarPlus />,
+        // iconName: <FaCalendarPlus />,
         text: "Jun 05,2022",
       },
     ],
