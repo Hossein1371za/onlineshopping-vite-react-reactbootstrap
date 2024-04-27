@@ -11,6 +11,18 @@ const SingleBlog = () => {
   return (
     <div>
       <PageHeader title={"اطلاعات بلاگ"} curPage={"بلاگ / اطلاعات بلاگ انتخابی"}/>
+      <div className='blog-section blog-single padding-tb section-bg'>
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-8 col-12">
+              سمت راست
+            </div>
+            <div className="col-lg-4 col-12">
+              سمت چپ
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
