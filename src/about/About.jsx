@@ -1,9 +1,36 @@
-import React from 'react'
+import React from "react";
+
+const subTitle = "درباره شرکت ما";
+const title = "خدمات و تجربیات ما";
+const desc =
+  "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.";
+
+const year = "30+";
+const expareance = "سالهای تجربه";
+
+const aboutList = [
+  {
+    imgUrl: "/src/assets/images/about/icon/01.jpg",
+    imgAlt: "about",
+    title: "مربیان ما",
+    desc: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله ",
+  },
+  {
+    imgUrl: "/src/assets/images/about/icon/02.jpg",
+    imgAlt: "about",
+    title: "دریافت گواهی نامه",
+    desc: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله ",
+  },
+  {
+    imgUrl: "/src/assets/images/about/icon/03.jpg",
+    imgAlt: "about",
+    title: "کلاس های آنلاین",
+    desc: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله ",
+  },
+];
 
 const About = () => {
-  return (
-    <div>About</div>
-  )
-}
+  return <div></div>;
+};
 
-export default About
+export default About;
