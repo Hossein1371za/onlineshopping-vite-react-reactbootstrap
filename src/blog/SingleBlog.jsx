@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import blogList from "../utilis/blogData";
 import { useParams } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
+import Tags from "../shop/Tags"
+import PopularPost from "../shop/PopularPost"
+
 import {
   FaPlay,
   FaInstagram,
@@ -112,6 +115,7 @@ const SingleBlog = () => {
                                   <img
                                     src="/src/assets/images/blog/single/01.jpg"
                                     alt=""
+
                                   />
                                   <p>
                                     لورم ایپسوم متن ساختگی با تولید سادگی
@@ -140,6 +144,7 @@ const SingleBlog = () => {
                                     <a
                                       href="https://youtu.be/_W3R2VwRyF4?si=dQrQfEMwVnu01v6x"
                                       className="video-button popup"
+                                      target="_blank"
                                     >
                                       <i>
                                         <FaPlay />
@@ -194,7 +199,12 @@ const SingleBlog = () => {
                 </div>
               </article>
             </div>
-            <div className="col-lg-4 col-12">سمت چپ</div>
+            <div className="col-lg-4 col-12">
+              <aside>
+                <Tags/>
+                <PopularPost/>
+              </aside>
+            </div>
           </div>
         </div>
       </div>
