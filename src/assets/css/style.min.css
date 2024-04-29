@@ -5598,7 +5598,7 @@ button {
 
 .about-section .about-right .section-wrapper ul li .sr-left {
     width: 70px;
-    margin-right: 15px
+    margin-left: 15px
 }
 
 .about-section .about-right .section-wrapper ul li .sr-left img {
@@ -5647,7 +5647,7 @@ button {
 }
 
 .about-section.style-3 .about-left .abs-thumb {
-    right: 15px;
+    left: 15px;
     bottom: -60px;
     box-shadow: 0 0 10px rgba(16, 17, 21, .1)
 }
@@ -5670,7 +5670,6 @@ button {
 
 .about-section.style-3 .about-left .about-left-content {
     width: 150px;
-    left: 0;
     bottom: 0;
     border: 10px solid #fff;
     box-shadow: 0 0 10px rgba(16, 17, 21, .1)
