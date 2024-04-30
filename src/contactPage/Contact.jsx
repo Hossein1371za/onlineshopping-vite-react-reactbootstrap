@@ -19,7 +19,7 @@ const contactList = [
     imgUrl: "/src/assets/images/icon/02.png",
     imgAlt: "contact icon",
     title: "شماره تماس",
-    desc: "+22698 745 632,02 982 745",
+    desc: "9891212345678+",
   },
   {
     imgUrl: "/src/assets/images/icon/03.png",
@@ -39,6 +39,33 @@ const Contact = () => {
   return (
     <div>
       <PageHeader title={"با ما در تماس باشید"} curPage={"ارتباط با ما"} />
+      <div className="map-address-section padding-tb section-bg">
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="subtitle">{subTitle}</span>
+            <h2 className="title">{title}</h2>
+          </div>
+          <div className="section-wrapper">
+            <div className="row flex-row">
+              <div className="col-xl-4 col-lg-5 col-12">
+                <div className="contact-wrapper">
+                  {contactList.map((item, i) => (
+                    <div key={i} className="contact-item">
+                      <div className="contact-thumb">
+                        <img src={item.imgUrl} alt="" />
+                      </div>
+                      <div className="contact-content">
+                        <h6 className="me-3 title">{item.title}</h6>
+                        <p className="me-3">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
