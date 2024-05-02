@@ -20,6 +20,7 @@ import CartPage from "./shop/CartPage.jsx";
 import SingleBlog from "./blog/SingleBlog.jsx";
 import About from "./about/About.jsx";
 import Contact from "./contactPage/Contact.jsx";
+import Login from "./components/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
       { path: "cart-page", element: <CartPage /> },
       { path: "/about", element: <About/> },
       { path: "/contact", element: <Contact/> },
+      { path: "/login", element: <Login/> },
     ],
   },
 ]);
