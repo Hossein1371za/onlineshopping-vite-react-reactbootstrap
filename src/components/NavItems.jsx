@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo/logo.png";
 import { RiMenu4Fill, RiCloseFill } from "react-icons/ri";
 import { FaInfo } from "react-icons/fa";
-
+import {AuthContext} from "../contexts/AuthProvider"
 const NavItems = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [socialToggle, setSocialToggle] = useState(false);
   const [headerFixed, setHeaderFixed] = useState(false);
 
+  const {user} = useContext(AuthContext)
+  console.log(user);
   window.addEventListener("scroll", () => {
     if (window.scrollY > 200) {
       setHeaderFixed(true);
