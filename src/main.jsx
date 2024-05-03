@@ -22,6 +22,7 @@ import About from "./about/About.jsx";
 import Contact from "./contactPage/Contact.jsx";
 import Login from "./components/Login.jsx";
 import AuthProvider from "./contexts/AuthProvider.jsx";
+import PrivateRoute from "./privateRoute/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,12 +34,12 @@ const router = createBrowserRouter([
       { path: "/blog/:id", element: <SingleBlog /> },
       { path: "/shop", element: <Shop /> },
       { path: "/shop/:id", element: <SingleProduct /> },
-      { path: "cart-page", element: <CartPage /> },
+      { path: "cart-page", element: <PrivateRoute><CartPage /></PrivateRoute> },
       { path: "/about", element: <About/> },
       { path: "/contact", element: <Contact/> },
     ],
   },
-  // { path: "/login", element: <Login/> },
+  { path: "/login", element: <Login/> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
