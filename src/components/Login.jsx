@@ -12,20 +12,34 @@ const socialList = [
   { iconName: <LuTwitter />, siteLink: "#", className: "twitter" },
   { iconName: <LuLinkedin />, siteLink: "#", className: "linkedin" },
   { iconName: <LuInstagram />, siteLink: "#", className: "instagram" },
-  { iconName: <LuGithub />, siteLink: "#", className: "pinterest" },
+  { iconName: <LuGithub />, siteLink: "#", className: "github" },
 ];
 
 const Login = () => {
   const [error, setError] = useState("");
   const { signUpWithGmail, login } = useContext(AuthContext);
   const location = useLocation();
-  const navigat = useNavigate();
+  const navigate = useNavigate();
 
   const from = location.state?.form?.pathname || "/";
 
   const handlelogin = (e) => {
-    e.priventDefault();
+    e.preventDefault();
+    const form = e.target
+    const email = form.email.value
+    const password = form.password.value
+    login(email,password).then((res)=>{
+      const user = res.user
+      alert("با موفقیت وارد شدید!")
+      navigate(from,{replace:true})
+    }).catch((err)=>{
+      const errorMsg = err.massage
+      setError("لطفا ایمیل و پسورد رو بررسی کنید")
+    })
   };
+  const handleRegister=()=>{
+
+  }
 
   return (
     <div>
@@ -58,7 +72,7 @@ const Login = () => {
                     <input type="checkbox" id="number" name="number" />
                     <lable className="mx-3 " htmlFor="remember">منو به خاطر بسپار</lable>
                   </div>
-                  <Link to="/forgetpass">پسوورد ذخیره شود؟</Link>
+                  <Link to="/forgetpass">پسوورد فراموش شده؟</Link>
                 </div>
               </div>
               <div className="form-group">
@@ -79,7 +93,7 @@ const Login = () => {
                         {socialList.map((item, index) => {
                           return (
                             <li key={index} className="h5" >
-                              <a href="#" className={item.className}>
+                              <a href="#" onClick={handleRegister} className={item.className}>
                                 {item.iconName}
                               </a>
                             </li>
