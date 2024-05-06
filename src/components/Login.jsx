@@ -33,7 +33,7 @@ const Login = () => {
       alert("با موفقیت وارد شدید!")
       navigate(from,{replace:true})
     }).catch((err)=>{
-      const errorMsg = err.massage
+      const errorMsg = err.message
       setError("لطفا ایمیل و پسورد رو بررسی کنید")
     })
   };
@@ -42,7 +42,7 @@ const Login = () => {
       const user = res.user
       navigate(from,{replace:true})
     }).catch((err)=>{
-      const errorMsg = err.massage
+      const errorMsg = err.message
       setError("لطفا ایمیل و پسورد رو بررسی کنید")
     })
   }
@@ -75,7 +75,7 @@ const Login = () => {
               <div>
                 {
                   error && (
-                    <div className="error-massage text-danger mb-1">
+                    <div className="error-message text-danger mb-1">
                       {error}
                     </div>
                   )

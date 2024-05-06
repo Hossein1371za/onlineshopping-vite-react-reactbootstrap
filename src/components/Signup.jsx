@@ -19,7 +19,7 @@ const socialList = [
 
 const Signup = () => {
     const [error, setError] = useState("");
-    const { signUpWithGmail, login } = useContext(AuthContext);
+    const { signUpWithGmail,createUser } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
   
@@ -29,12 +29,28 @@ const Signup = () => {
           const user = res.user
           navigate(from,{replace:true})
         }).catch((err)=>{
-          const errorMsg = err.massage
+          const errorMsg = err.message
           setError("لطفا ایمیل و پسورد رو بررسی کنید")
         })
       }
     const handleSignup = (e)=>{
-
+        e.preventDefault();
+    const form = e.target
+    const email = form.email.value
+    const password = form.password.value
+    const confirmPassword = form.confirmPassword.value
+    if(password !== confirmPassword){
+        setError("پسورد یکسان نیست لطفا بررسی و دوباره امتحان کنید!")
+    }else{
+        setError("")
+        createUser(email,password).then((userCredential)=>{
+            const user = userCredential.user
+            alert("حساب شما با موفقیت ساخته شد!")
+            navigate(from,{replace:true})
+        }).catch((err)=>{
+            alert(`${err.message}`)
+        })
+    }
     }
   return (
     <div className="login-section padding-tb section-bg">
@@ -81,7 +97,7 @@ const Signup = () => {
           <div>
             {
               error && (
-                <div className="error-massage text-danger mb-1">
+                <div className="error-message text-danger mb-1">
                   {error}
                 </div>
               )
