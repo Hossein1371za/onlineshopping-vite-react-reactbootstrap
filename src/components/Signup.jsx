@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {LuFacebook ,LuTwitter ,LuLinkedin,LuInstagram,LuGithub } from "react-icons/lu"
+import { AuthContext } from '../contexts/AuthProvider';
 
 const title = "ثبت نام";
 const socialTitle = "ورود با شبکه مجازی";
@@ -18,9 +19,20 @@ const socialList = [
 
 const Signup = () => {
     const [error, setError] = useState("");
-    const handleRegister = ()=>{
-
-    }
+    const { signUpWithGmail, login } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+  
+    const from = location.state?.form?.pathname || "/";
+    const handleRegister=()=>{
+        signUpWithGmail().then((res)=>{
+          const user = res.user
+          navigate(from,{replace:true})
+        }).catch((err)=>{
+          const errorMsg = err.massage
+          setError("لطفا ایمیل و پسورد رو بررسی کنید")
+        })
+      }
     const handleSignup = (e)=>{
 
     }
@@ -60,8 +72,8 @@ const Signup = () => {
           <div className="form-group">
             <input
               type="password"
-              name="password"
-              id="password"
+              name="confirmPassword"
+              id="confirmPassword"
               placeholder="تکرار پسوورد"
               required
             />
@@ -76,15 +88,6 @@ const Signup = () => {
             }
           </div>
           <div className="form-group">
-            <div className="d-flex justify-content-between flex-wrap pt-sm-2">
-              <div className="checkgroup">
-                <input type="checkbox" id="number" name="number" />
-                <lable className="mx-3 " htmlFor="remember">منو به خاطر بسپار</lable>
-              </div>
-              <Link to="/forgetpass">پسوورد فراموش شده؟</Link>
-            </div>
-          </div>
-          <div className="form-group">
             <button className="d-block lab-btn">
               <span>{btnText}</span>
             </button>
@@ -92,7 +95,7 @@ const Signup = () => {
         </form>
         <div className="account-bottom">
           <span className="d-block cate pt-10">
-            حساب کاربری نداری؟ <Link to="/sign-up">ثبت نام</Link>
+            حساب کاربری داری؟ <Link to="/login">ورود</Link>
           </span>
           <span className="or">
             <span>یا</span>
