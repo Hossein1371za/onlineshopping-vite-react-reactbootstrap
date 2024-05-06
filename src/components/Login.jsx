@@ -38,7 +38,13 @@ const Login = () => {
     })
   };
   const handleRegister=()=>{
-
+    signUpWithGmail().then((res)=>{
+      const user = res.user
+      navigate(from,{replace:true})
+    }).catch((err)=>{
+      const errorMsg = err.massage
+      setError("لطفا ایمیل و پسورد رو بررسی کنید")
+    })
   }
 
   return (
@@ -65,6 +71,15 @@ const Login = () => {
                   placeholder="پسوورد"
                   required
                 />
+              </div>
+              <div>
+                {
+                  error && (
+                    <div className="error-massage text-danger mb-1">
+                      {error}
+                    </div>
+                  )
+                }
               </div>
               <div className="form-group">
                 <div className="d-flex justify-content-between flex-wrap pt-sm-2">
